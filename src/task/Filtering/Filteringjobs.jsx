@@ -36,19 +36,24 @@ const Filteringjobs = () => {
         }
     })
     return (
-        <div>
-            <input onClick={changeJobType} type="button" value="All" />
-            <input onClick={changeJobType} type="button" value="Web development" />
-            <input onClick={changeJobType} type="button" value="Application development" />
+        <div className='mt-5'>
+            {
+                ['All', 'Web development', 'Application development'].map((item,index) => {
+                    return (
+
+                        <button key={index} className={item == selectedJobtype ? "btn btn-primary mx-1 rounded-pill px-3 " : "btn btn-secondary mx-1 rounded-pill px-3"} onClick={() => setJobtype(item)}>{item}</button>
+                    )
+                })
+            }
             <Row>
 
                 {
-                    filteredJobs.map((job) => {
+                    filteredJobs.map((job,index) => {
                         return (
-                            <Col md='4'>
-                                <Card>
+                            <Col md='12' key={index}>
+                                <Card className='mt-3  p-3 shadow-sm'>
                                     <Card.Title>
-                                       Title : {job.title}
+                                        Title : {job.title}
                                     </Card.Title>
                                     <Card.Text>
                                         <p className="text-muted">Type : {job.type}</p>

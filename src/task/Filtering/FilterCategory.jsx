@@ -78,26 +78,38 @@ const FilterCategory = () => {
     })
     return (
         <div>
-            <input type="button" value="all" onClick={changeCategory} />
-            <input type="button" value="flower" onClick={changeCategory} />
-            <input type="button" value="animal" onClick={changeCategory} />
-            <input type="button" value="Clothes" onClick={changeCategory} />
-            <table border={1} style={{ margin: "auto", marginTop: "30px" }}>
-                <tr>
-                    <th>Name</th>
-                    <th>Category</th>
-                </tr>
-                {
-                    filterdata.map((item, index) => {
-                        return (
-                            <tr>
-                                <td>{item.name}</td>
-                                <td>{item.category}</td>
+            <div className='d-flex justify-content-between align-items-center'>
+                <div>
 
-                            </tr>
-                        )
-                    })
-                }
+                    <input className='btn btn-primary me-2' type="button" value="all" onClick={changeCategory} />
+                    <input className='btn btn-primary me-2' type="button" value="flower" onClick={changeCategory} />
+                    <input className='btn btn-primary me-2' type="button" value="animal" onClick={changeCategory} />
+                    <input className='btn btn-primary me-2' type="button" value="Clothes" onClick={changeCategory} />
+                </div>
+                <input type="text" onChange={(e)=>setCategory(e.target.value)} placeholder='Search Here ...' className='form-control w-25' />
+            </div>
+            <table border={1} className='table table-bordered' style={{ margin: "auto", marginTop: "30px" }}>
+                <thead>
+
+                    <tr>
+                        <th className='bg-warning'>Name</th>
+                        <th className='bg-warning'>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {
+                        filterdata.map((item, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{item.name}</td>
+                                    <td>{item.category}</td>
+
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
             </table>
         </div>
     )
