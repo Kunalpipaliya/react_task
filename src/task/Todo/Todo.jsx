@@ -4,6 +4,7 @@ const Todo = () => {
     const [todo, setTodo] = useState('')
     const [todolist, setTodolist] = useState([])
     const [editIndex,setEditindex]=useState(null)
+    
     const handleClick = () => {
         if(!todo.trim()) return
         if(editIndex!==null){

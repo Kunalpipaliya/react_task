@@ -4,6 +4,7 @@ import FilterCategory from './task/Filtering/FilterCategory';
 import Filteringjobs from './task/Filtering/Filteringjobs';
 import FormData from './task/Form handling/FormData';
 import Todo from './task/Todo/Todo';
+import PostHandling from './task/CRUD/PostHandling';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
 
       <FormData/>
       <Todo/>
+      <PostHandling/>
+      
     </div>
   );
 }

@@ -4,13 +4,33 @@ const FormData = () => {
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
     const [list, setList] = useState([])
+    const [editIndex, setEditindex] = useState(null)
     const handleClick = () => {
-        const obj = { name, surname }
-        setList([...list, obj])
+        if(!name.trim()||!surname.trim()) return;
+        if (editIndex !== null) {
+            const updatedList = [...list]
+            updatedList[editIndex] = { name,surname }
+            setList(updatedList)
+            setEditindex(null)
+
+        }
+        else {
+
+            const obj = { name, surname }
+            setList([...list, obj])
+        }
         setName('')
         setSurname('')
     }
-    
+    const handleDelete = (index) => {
+        list.splice(index, 1)
+        setList([...list])
+    }
+    const handleUpdate = (index) => {
+        setName(list[index].name)
+        setSurname(list[index].surname)
+        setEditindex(index)
+    }
     return (
         <div className='my-5'>
             <h3>Form handling</h3>
@@ -24,7 +44,7 @@ const FormData = () => {
                     <label htmlFor="" className="form-label">Surname</label>
                     <input value={surname} type="text" onChange={(e) => setSurname(e.target.value)} placeholder='Enter Surname ' className="form-control" />
                 </div>
-                <button className="btn btn-primary w-100" type='button' onClick={handleClick}>Submit</button>
+                <button className="btn btn-primary w-100" type='button' onClick={handleClick}>{editIndex!==null?"update":"Submit"}</button>
             </form>
             <table className='table w-50 m-auto mt-5'>
                 <thead>
@@ -32,7 +52,7 @@ const FormData = () => {
                     <tr>
                         <th className='bg-warning'>Name</th>
                         <th className='bg-warning'>surname</th>
-
+                        <th colSpan={2} className='bg-warning'></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +63,11 @@ const FormData = () => {
                                 <tr key={index}>
                                     <td>{item.name}</td>
                                     <td>{item.surname}</td>
-                                    
+                                    <td>
+
+                                        <button className='btn btn-primary me-3' type='button' onClick={() => handleUpdate(index)}>Update</button>
+                                        <button className='btn btn-danger' type='button' onClick={() => handleDelete(index)}>Delete</button>
+                                    </td>
                                 </tr>
                             )
                         })
