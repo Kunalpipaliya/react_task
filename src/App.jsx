@@ -3,23 +3,43 @@ import './App.css';
 import FilterCategory from './task/Filtering/FilterCategory';
 import Filteringjobs from './task/Filtering/Filteringjobs';
 import FormData from './task/Form handling/FormData';
-import Todo from './task/Todo/Todo';
+// import Todo from './task/Todo/Todo';
 import PostHandling from './task/CRUD/PostHandling';
 import UseFormik from './task/UseFormik/UseFormik';
 import FormHandling from './task/UseFormik/FormHandling';
+import APIcalling from './task/API/Get method/APIcalling';
+import Todo from './task/API/Get method/Todo';
+import Studentlist from './task/API/Get method/Studentlist';
+import Userlist from './task/API/Get method/Userlist';
+import RickandMorty from './task/API/Get method/RickandMorty';
+import Students from './task/API/post method/Students';
+import Usersdatacrud from './task/API/Delete method/Usersdatacrud';
 
 function App() {
   return (
-    <div className="App container">
-      <h3>Filtering Tasks</h3>
-      <FilterCategory/>
+    <div className="App ">
+    
+      {/* <FilterCategory/>
       <Filteringjobs/>
 
       <FormData/>
       <Todo/>
       <PostHandling/>
-      <UseFormik/>
-      <FormHandling/>
+      <UseFormik/>*/}
+      {/* <FormHandling/>  */}
+
+
+      {/* API */}
+      {/* <APIcalling/> */}
+      {/* <Todo/> */}
+      {/* <Userlist/> */}
+      {/* <RickandMorty/> */}
+
+
+      {/* <Studentlist/>
+      <Students/> */}
+
+      <Usersdatacrud/>
     </div>
   );
 }
