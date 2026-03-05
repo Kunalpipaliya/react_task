@@ -16,6 +16,8 @@ import Students from './task/API/post method/Students';
 import Usersdatacrud from './task/API/Delete method/Usersdatacrud';
 import UseRefExample from './task/Hooks/UseRefExample';
 import UseMemoExample from './task/Hooks/UseMemoExample';
+import UseCallbackExample from './task/Hooks/UseCallbackExample';
+import UseContextExample from './task/Hooks/UseContextExample';
 
 function App() {
   return (
@@ -43,7 +45,9 @@ function App() {
 
       {/* <Usersdatacrud/> */}
       {/* <UseRefExample/> */}
-      <UseMemoExample/>
+      {/* <UseMemoExample/> */}
+      {/* <UseCallbackExample/> */}
+      <UseContextExample/>
     </div>
   );
 }
