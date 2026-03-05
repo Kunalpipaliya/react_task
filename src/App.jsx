@@ -14,6 +14,8 @@ import Userlist from './task/API/Get method/Userlist';
 import RickandMorty from './task/API/Get method/RickandMorty';
 import Students from './task/API/post method/Students';
 import Usersdatacrud from './task/API/Delete method/Usersdatacrud';
+import UseRefExample from './task/Hooks/UseRefExample';
+import UseMemoExample from './task/Hooks/UseMemoExample';
 
 function App() {
   return (
@@ -39,7 +41,9 @@ function App() {
       {/* <Studentlist/>
       <Students/> */}
 
-      <Usersdatacrud/>
+      {/* <Usersdatacrud/> */}
+      {/* <UseRefExample/> */}
+      <UseMemoExample/>
     </div>
   );
 }
